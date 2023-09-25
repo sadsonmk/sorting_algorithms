@@ -1,15 +1,13 @@
 #include "sort.h"
 
 /**
- * swap - sorts a doubly linked list of integers
+ * swap_back - sorts a doubly linked list of integers
  * in ascending order
  * @list: is the list to be sorted
  * @list_p: is the list to be printed
- * @array: Array to convert to a doubly linked list
- * @size: Size of the array
  * Return: the sorted list.
  */
-listint_t *swap(listint_t **list, listint_t *list_p)
+listint_t *swap_back(listint_t **list, listint_t *list_p)
 {
 	listint_t *ptr = *list;
 	listint_t *tmp;
@@ -50,7 +48,6 @@ void insertion_sort_list(listint_t **list)
 
 	if (!ptr)
 		return;
-
 	while (ptr->next)
 	{
 		if (ptr->n > ptr->next->n)
@@ -66,7 +63,7 @@ void insertion_sort_list(listint_t **list)
 				ptr->next->prev = ptr;
 			print_list(*list);
 			if (tmp->prev)
-				tmp = swap(&tmp, *list);
+				tmp = swap_back(&tmp, *list);
 			if (!tmp->prev)
 				*list = tmp;
 		}
