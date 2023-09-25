@@ -42,8 +42,9 @@ int main(void)
 {
 	listint_t *list;
 	int array[] = {19, 48, 99, 71, 13, 52, 96, 73, 86, 7};
+	int array1[] = {19, 48, 92, 71, 13, 80, 96, 99, 123, 133};
 	int array2[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-	int array3[] = {0, 9, 8, 7, 6, 5, 4, 3, 2, 1};
+	int array3[] = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
 	int array4[] = {-4, 5, -2, 23, 41, 1, 4, 0};
 	int array5[] = {3, 1, 2, 0};
 	int array6[] = {6};
@@ -52,6 +53,17 @@ int main(void)
 	size_t n = sizeof(array) / sizeof(array[0]);
 
 	list = create_listint(array, n);
+	if (!list)
+		return (1);
+	print_list(list);
+	printf("\n");
+	insertion_sort_list(&list);
+	printf("\n");
+	print_list(list);
+
+	n = sizeof(array1) / sizeof(array1[0]);
+
+	list = create_listint(array1, n);
 	if (!list)
 		return (1);
 	print_list(list);
