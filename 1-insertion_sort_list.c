@@ -46,7 +46,7 @@ void insertion_sort_list(listint_t **list)
 	listint_t *ptr = *list;
 	listint_t *tmp;
 
-	if (!list || !ptr || !ptr->next || !ptr->next->next)
+	if (!list || !ptr)
 		return;
 	while (ptr->next)
 	{
