@@ -4,10 +4,12 @@
  * swap - sorts a doubly linked list of integers
  * in ascending order
  * @list: is the list to be sorted
- * @list2: is the list to be printed
+ * @list_p: is the list to be printed
+ * @array: Array to convert to a doubly linked list
+ * @size: Size of the array
  * Return: the sorted list.
  */
-listint_t *swap(listint_t **list, listint_t *list2)
+listint_t *swap(listint_t **list, listint_t *list_p)
 {
 	listint_t *ptr = *list;
 	listint_t *tmp;
@@ -26,8 +28,8 @@ listint_t *swap(listint_t **list, listint_t *list2)
 			if (ptr->prev)
 				ptr->prev->next = ptr;
 			if (!ptr->prev)
-				list2 = ptr;
-			print_list(list2);
+				list_p = ptr;
+			print_list(list_p);
 		}
 		else
 			ptr = ptr->prev;
