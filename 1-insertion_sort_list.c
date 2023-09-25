@@ -61,6 +61,8 @@ void insertion_sort_list(listint_t **list)
 			ptr->prev = tmp;
 			if (ptr->next)
 				ptr->next->prev = ptr;
+			if (!tmp->prev)
+				*list = tmp;
 			print_list(*list);
 			if (tmp->prev)
 				tmp = swap_back(&tmp, *list);
@@ -70,6 +72,4 @@ void insertion_sort_list(listint_t **list)
 		else
 			ptr = ptr->next;
 	}
-	if (!tmp->prev)
-		*list = tmp;
 }
