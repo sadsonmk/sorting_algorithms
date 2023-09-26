@@ -9,8 +9,6 @@
  */
 void quick_sort(int *array, size_t size)
 {
-	size_t pivot_idx;
-
 	if (!array || size < 2)
 		return;
 }
