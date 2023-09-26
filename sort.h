@@ -23,7 +23,6 @@ void print_list(const listint_t *list);
 void print_array(const int *array, size_t size);
 listint_t *create_listint(const int *array, size_t size);
 void bubble_sort(int *array, size_t size);
-listint_t *swap_back(listint_t **list, listint_t *list2);
 void insertion_sort_list(listint_t **list);
 
 #endif /* This is the sort.h file */
